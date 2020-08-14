@@ -67,6 +67,7 @@ module RspecApiDocumentation
       end
     }
 
+    add_setting :doc_filename, :default => 'open_api_swagger'
     add_setting :format, :default => :html
     add_setting :template_path, :default => File.expand_path("../../../templates", __FILE__)
     add_setting :filter, :default => :all

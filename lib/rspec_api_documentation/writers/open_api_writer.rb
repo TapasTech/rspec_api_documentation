@@ -6,10 +6,10 @@ module RspecApiDocumentation
     class OpenApiWriter < Writer
       FILENAME = 'open_api'
 
-      delegate :docs_dir, :configurations_dir, to: :configuration
+      delegate :docs_dir, :configurations_dir, :doc_filename, to: :configuration
 
       def write
-        File.open(docs_dir.join("#{FILENAME}.json"), 'w+') do |f|
+        File.open(docs_dir.join("#{doc_filename}.json"), 'w+') do |f|
           f.write Formatter.to_json(OpenApiIndex.new(index, configuration, load_config))
         end
       end

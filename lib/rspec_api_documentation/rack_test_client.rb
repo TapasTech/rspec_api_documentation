@@ -21,7 +21,7 @@ module RspecApiDocumentation
     end
 
     def response_body
-      last_response.body
+      last_response.body.encode("utf-8")
     end
 
     def request_content_type
